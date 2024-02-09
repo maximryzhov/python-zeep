@@ -28,6 +28,7 @@ class Element(Base):
         default=None,
         is_global=False,
         attr_name=None,
+        documentation=None
     ):
 
         if name is None:
@@ -44,6 +45,7 @@ class Element(Base):
         self.is_global = is_global
         self.default = default
         self.attr_name = attr_name or self.name
+        self.documentation = documentation
         # assert type_
 
     def __str__(self):

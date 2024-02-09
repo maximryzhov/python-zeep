@@ -20,6 +20,7 @@ class tags:
     import_ = xsd_ns("import")
     include = xsd_ns("include")
     annotation = xsd_ns("annotation")
+    documentation = xsd_ns("documentation")
     element = xsd_ns("element")
     simpleType = xsd_ns("simpleType")
     complexType = xsd_ns("complexType")
@@ -399,11 +400,15 @@ class SchemaVisitor:
 
         children = list(node)
         xsd_type = None
+        documentation = None
         if children:
             value = None
 
             for child in children:
                 if child.tag == tags.annotation:
+                    for annnotation_child in child.getchildren():
+                        if annnotation_child.tag == tags.documentation:
+                            documentation = annnotation_child.text
                     continue
 
                 elif child.tag in (tags.simpleType, tags.complexType):
@@ -428,6 +433,7 @@ class SchemaVisitor:
             nillable=nillable,
             default=default,
             is_global=is_global,
+            documentation=documentation
         )
 
         # Only register global elements
