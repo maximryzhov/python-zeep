@@ -14,7 +14,7 @@ Highlights:
  * Experimental support for XOP messages
  
 Differences from the official repo:
- * Support for `xs:annotation` abd `xs:documentation` tags
+ * Support for `xs:annotation` and `xs:documentation` tags
 
 Please see for more information the documentation at
 http://docs.python-zeep.org/
