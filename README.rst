@@ -12,7 +12,9 @@ Highlights:
  * Support for WSSE (UserNameToken / x.509 signing)
  * Support for asyncio using the httpx module
  * Experimental support for XOP messages
-
+ 
+Differences from the official repo:
+ * Support for `xs:annotation` abd `xs:documentation` tags
 
 Please see for more information the documentation at
 http://docs.python-zeep.org/
